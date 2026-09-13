@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: #201f22;
+  --foreground: #ffffff;
+  --surface-secondary: #707070;
+  --silver-tone: #858585;
+  --full-white: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-silver-tone: var(--silver-tone);
+  --color-full-white: var(--full-white);
+  --font-inter: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: auto !important;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography Utility Classes */
+.text-h1 {
+  font-size: clamp(3rem, 7vw, 119px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.text-h2 {
+  font-size: clamp(2.25rem, 4.5vw, 64px);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.text-body-1 {
+  font-size: clamp(1.25rem, 2vw, 30px);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.text-body-2 {
+  font-size: clamp(1.125rem, 1.5vw, 22px);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-body-3 {
+  font-size: clamp(0.95rem, 1.2vw, 18px);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text-button {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+/* Custom Component Aesthetics */
+.pill-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-button:hover {
+  background: #ffffff;
+  color: #201f22;
+  border-color: #ffffff;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #201f22;
+}
+::-webkit-scrollbar-thumb {
+  background: #707070;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #858585;
+}
