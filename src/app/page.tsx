@@ -208,12 +208,14 @@ export default function Home() {
             <MaskReveal direction="up" delay={0.2} duration={0.8}>
               <div className="bg-white text-[#111115] rounded-[24px] md:rounded-[28px] p-4 md:p-5 shadow-2xl flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
                 <div className="w-full h-24 md:h-28 rounded-[16px] overflow-hidden relative mb-3">
-                  <Image
-                    src="/images/sanctuary.png"
-                    alt="Living Room Connection"
-                    fill
-                    className="object-cover"
-                  />
+                  <Parallax speed={-0.15} className="w-full h-full">
+                    <Image
+                      src="/images/sanctuary.png"
+                      alt="Living Room Connection"
+                      fill
+                      className="object-cover scale-125"
+                    />
+                  </Parallax>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-[#111115] mb-1">
@@ -230,12 +232,14 @@ export default function Home() {
             <MaskReveal direction="up" delay={0.3} duration={0.8}>
               <div className="bg-white text-[#111115] rounded-[24px] md:rounded-[28px] p-4 md:p-5 shadow-2xl flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
                 <div className="w-full h-24 md:h-28 rounded-[16px] overflow-hidden relative mb-3">
-                  <Image
-                    src="/images/sunset-villa.png"
-                    alt="Master Bedroom Suite"
-                    fill
-                    className="object-cover"
-                  />
+                  <Parallax speed={-0.15} className="w-full h-full">
+                    <Image
+                      src="/images/sunset-villa.png"
+                      alt="Master Bedroom Suite"
+                      fill
+                      className="object-cover scale-125"
+                    />
+                  </Parallax>
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-semibold tracking-tight text-[#111115] mb-1">
@@ -384,12 +388,14 @@ export default function Home() {
             <div className="lg:col-span-8 w-full overflow-hidden pr-6 lg:pr-0">
               {/* Mobile View: Single Featured Rounded Image Card (Matching container margins) */}
               <div className="block lg:hidden w-full h-[320px] sm:h-[400px] rounded-[24px] sm:rounded-[28px] overflow-hidden relative border border-white/10 shadow-2xl">
-                <Image
-                  src={carouselImages[0].src}
-                  alt={carouselImages[0].title}
-                  fill
-                  className="object-cover"
-                />
+                <Parallax speed={-0.2} className="w-full h-full">
+                  <Image
+                    src={carouselImages[0].src}
+                    alt={carouselImages[0].title}
+                    fill
+                    className="object-cover scale-120"
+                  />
+                </Parallax>
               </div>
 
               {/* Desktop View: Multi-slide Track */}
@@ -407,13 +413,15 @@ export default function Home() {
                       opacity: idx < carouselIndex ? 0 : 1,
                     }}
                   >
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute bottom-4 left-4 px-4 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-xs text-white border border-white/10">
+                    <Parallax speed={-0.2} className="w-full h-full">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        fill
+                        className="object-cover scale-120 transition-transform duration-700 group-hover:scale-125"
+                      />
+                    </Parallax>
+                    <div className="absolute bottom-4 left-4 px-4 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-xs text-white border border-white/10 z-10">
                       {item.title}
                     </div>
                   </div>
@@ -597,12 +605,14 @@ export default function Home() {
                         : "aspect-square hover:shadow-xl hover:scale-[1.02] opacity-90 hover:opacity-100"
                     }`}
                   >
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    <Parallax speed={-0.18} className="w-full h-full">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover scale-120 transition-transform duration-700 group-hover:scale-125"
+                      />
+                    </Parallax>
                   </motion.div>
 
                   {/* Title, Location & Description revealed in place */}

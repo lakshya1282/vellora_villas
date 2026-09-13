@@ -20,14 +20,14 @@ export default function Parallax({
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start start", "end start"],
+    offset: ["start end", "end start"],
   });
 
-  // Calculate pixel movement based on speed factor starting cleanly at 0 when at top of page
-  const movement = speed * 250;
+  // Calculate pixel movement based on speed factor
+  const movement = speed * 150;
   
-  const rawY = useTransform(scrollYProgress, [0, 1], [0, movement]);
-  const rawX = useTransform(scrollYProgress, [0, 1], [0, movement]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [-movement, movement]);
+  const rawX = useTransform(scrollYProgress, [0, 1], [-movement, movement]);
 
   const smoothY = useSpring(rawY, { stiffness: 100, damping: 20 });
   const smoothX = useSpring(rawX, { stiffness: 100, damping: 20 });
